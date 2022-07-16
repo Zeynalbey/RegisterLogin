@@ -32,7 +32,7 @@ namespace RegisterLogin.ValidationLogic.Validations
     }
     public class ValidationEmailL
     {
-        public virtual bool IsEmailCorrect(string email)
+        public  bool IsEmailCorrect(string email)
         {
             string pattern = @"^([a-zA-Z0-9]{2,30})(@code\.edu\.az)$";
             Regex regex = new Regex(pattern);
@@ -43,6 +43,39 @@ namespace RegisterLogin.ValidationLogic.Validations
             return false;
         }
     }
+
+    public class ValidationPassword
+    {
+        public bool IsPasswordCorrect(string password)
+        {
+            Regex hasNumber = new Regex(@"[0-9]+");
+            Regex hasUpperChar = new Regex(@"[A-Z]+");
+            Regex hasMiniMaxChars = new Regex(@".{8,}");
+            Regex hasLowerChar = new Regex(@"[a-z]+");
+
+
+            if (!hasLowerChar.IsMatch(password))
+            {
+
+                return false;
+            }
+            else if (!hasUpperChar.IsMatch(password))
+            {
+                return false;
+            }
+            else if (!hasMiniMaxChars.IsMatch(password))
+            {
+                return false;
+            }
+            else if (!hasNumber.IsMatch(password))
+            {
+                return false;
+            }
+
+            return true;
+        }
+    }
+    
 
 
 }

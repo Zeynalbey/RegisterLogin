@@ -28,21 +28,26 @@ namespace RegisterLogin
                 ValidationName validationName = new ValidationName();
                 ValidationLastName validationLastName = new ValidationLastName();
                 ValidationEmailL validationEmail = new ValidationEmailL();
+                ValidationPassword validationPassword = new ValidationPassword();
 
-                if (validationName.IsCorrect(name) & validationLastName.IsCorrect(lastName)& validationEmail.IsEmailCorrect(email))
+                if (validationName.IsCorrect(name) &
+                    validationLastName.IsCorrect(lastName) &
+                    validationEmail.IsEmailCorrect(email) &
+                    validationPassword.IsPasswordCorrect(password))
                 {
-                    UserRepository.Add(name,lastName,email,password);
-                    Console.WriteLine($"{name} {lastName} added" );
+                    UserRepository.Add(name, lastName, email, password);
+
+                    Console.WriteLine($"{name}, you successfully registered, now you can login with your new account!");
                 }
                 else
                 {
-                    Console.WriteLine("Qeydiyyat bas tutmadi.");
+                    Console.WriteLine("You couldn't register!");
                 }
 
             }
-            else if(command == "/login")
+            else if (command == "/login")
             {
-                
+
             }
             else
             {
