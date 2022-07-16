@@ -27,8 +27,9 @@ namespace RegisterLogin
                 string password = Console.ReadLine();
                 ValidationName validationName = new ValidationName();
                 ValidationLastName validationLastName = new ValidationLastName();
+                ValidationEmailL validationEmail = new ValidationEmailL();
 
-                if (validationName.IsCorrect(name) & validationLastName.IsCorrect(lastName))
+                if (validationName.IsCorrect(name) & validationLastName.IsCorrect(lastName)& validationEmail.IsEmailCorrect(email))
                 {
                     UserRepository.Add(name,lastName,email,password);
                     Console.WriteLine($"{name} {lastName} added" );

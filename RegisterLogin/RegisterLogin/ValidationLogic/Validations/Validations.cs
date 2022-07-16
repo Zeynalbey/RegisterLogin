@@ -30,6 +30,19 @@ namespace RegisterLogin.ValidationLogic.Validations
     {
         
     }
+    public class ValidationEmailL
+    {
+        public virtual bool IsEmailCorrect(string email)
+        {
+            string pattern = @"^([a-zA-Z0-9]{2,30})(@code\.edu\.az)$";
+            Regex regex = new Regex(pattern);
+            if (regex.IsMatch(email))
+            {
+                return true;
+            }
+            return false;
+        }
+    }
 
 
 }
