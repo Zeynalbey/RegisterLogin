@@ -12,9 +12,9 @@ namespace RegisterLogin.Database
 
         private static int IdCounter = 1;
         public string FirstName { get; set; }
-        public string LastName { get; set; }
-        public  string Email { get; set; }
-        public  string Password { get; set; }
+        public string LastName { get; set; } 
+        public string Email { get; set; } 
+        public string Password { get; set; } 
 
         public User(string firstName, string lastName, string email, string password)
         {

@@ -1,4 +1,5 @@
-﻿using RegisterLogin.Database.Repository;
+﻿using RegisterLogin.Database;
+using RegisterLogin.Database.Repository;
 using RegisterLogin.ValidationLogic.Validations;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,8 @@ namespace RegisterLogin.ValidationLogic
     {
         public static void Register()
         {
+
+
             Console.Write("Write name: ");
             string name = Console.ReadLine();
             Console.Write("Write surname: ");
@@ -23,6 +26,7 @@ namespace RegisterLogin.ValidationLogic
             Console.Write("Please comfirm password: ");
             string comfirmPassword = Console.ReadLine();
             Console.WriteLine();
+
 
             ValidationName validationName = new ValidationName();
             ValidationLastName validationLastName = new ValidationLastName();
@@ -63,6 +67,8 @@ namespace RegisterLogin.ValidationLogic
             {
                 Console.WriteLine("Email or password is not correct! ");
             }
+
+
 
 
 

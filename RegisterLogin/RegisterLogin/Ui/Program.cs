@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Security.Cryptography.X509Certificates;
 using RegisterLogin.Database;
 using RegisterLogin.Database.Repository;
 using RegisterLogin.ValidationLogic;
@@ -14,6 +16,8 @@ namespace RegisterLogin
             Console.WriteLine("/register");
             Console.WriteLine("/login");
             Console.WriteLine();
+
+            UserRepository.Add("Zeynal", "Mikayilli", "admin@gmail.com", "123321");
 
             while (true)
             {

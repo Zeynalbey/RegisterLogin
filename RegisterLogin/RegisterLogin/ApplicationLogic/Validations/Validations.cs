@@ -10,7 +10,7 @@ using RegisterLogin.Database.Repository;
 namespace RegisterLogin.ValidationLogic.Validations
 {
 
-    public class LengthValidaton
+    public class ValidatonWords
     {
         public virtual bool IsCorrect(string text)
         {
@@ -24,11 +24,11 @@ namespace RegisterLogin.ValidationLogic.Validations
         }
 
     }
-    public class ValidationName : LengthValidaton
+    public class ValidationName : ValidatonWords
     {
         
     }
-    public class ValidationLastName : LengthValidaton
+    public class ValidationLastName : ValidatonWords
     {
 
     }

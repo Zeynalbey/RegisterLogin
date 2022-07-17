@@ -9,11 +9,15 @@ namespace RegisterLogin.Database.Repository
     class UserRepository
     {
         public static List<User> users = new List<User>();
+        
         public static void Add(string name, string lastName, string email, string password)
         {
+            
             User user = new User(name, lastName, email, password);
             users.Add(user);
-            
+            //Console.WriteLine(DateTime.Now.ToString());
+
+
         }
 
         public static bool IsEqualComfirmPassword(string password, string comfirmPassword)
