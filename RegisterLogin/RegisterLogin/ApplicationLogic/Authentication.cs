@@ -64,7 +64,7 @@ namespace RegisterLogin.ValidationLogic
             {
                 Console.WriteLine("Well come to our application! ");
             }
-            else if (email == "Admin@gmail.com" && password == "123321")
+            else if (email == "admin@gmail.com" && password == "123321")             //email:      admin@gmail.com        parol:  123321
             {
                 Console.WriteLine("Welcome to your account, dear admin, Zeynal Mikayilli admin@gmail.com!");
                 Console.WriteLine("/show-users");

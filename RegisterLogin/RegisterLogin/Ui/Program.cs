@@ -14,12 +14,14 @@ namespace RegisterLogin
         {
             Console.WriteLine("Our commands:");
 
-            UserRepository.Add("Zeynal", "Mikayilli", "admin@gmail.com", "123321");
+            UserRepository.Add("Zeynal", "Mikayilli", "Admin@gmail.com", "123321");
+
 
             while (true)
             {
                 Console.WriteLine("/register");
                 Console.WriteLine("/login");
+                Console.WriteLine("/exit");
                 Console.WriteLine();
                 string command = Console.ReadLine();
                 Console.WriteLine();
@@ -32,10 +34,15 @@ namespace RegisterLogin
                 {
                     Authentication.Login();
                 }
+                else if (command == "/exit")
+                {
+                    break;
+                }
                 else
                 {
                     Console.WriteLine("Command not found! ");
                 }
+                
             }
             
 
