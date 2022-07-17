@@ -15,16 +15,12 @@ namespace RegisterLogin.Database.Repository
             
             User user = new User(name, lastName, email, password);
             users.Add(user);
-            //Console.WriteLine(DateTime.Now.ToString());
-
-
         }
 
         public static bool IsEqualComfirmPassword(string password, string comfirmPassword)
         {
             if (comfirmPassword == password )
             {
-
                 return true;
             }
 
@@ -33,11 +29,11 @@ namespace RegisterLogin.Database.Repository
             return false;
         }
     
-        
         public static bool IsUserExistsByEmail(string email, string comfirmPassword)
         {
             foreach (User user in users)
             {
+
                 if (user.Email == email && user.Password == comfirmPassword)
                 {
                     foreach (User user1 in users)
@@ -47,28 +43,21 @@ namespace RegisterLogin.Database.Repository
                             return true;
                         }
                     }
-
                     return false;
                 }
             }
 
             return false;
         }
+        public static void ShowAllUsers()
+        {
+            foreach (User user in users)
+            {
+                Console.WriteLine(user.GetInfo());
+            }
+        }
 
-
-           
-
-
-
-
-
-
-
-
-
-
-
-
+        
 
     }
 }

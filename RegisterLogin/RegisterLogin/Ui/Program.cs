@@ -13,14 +13,14 @@ namespace RegisterLogin
         static void Main(string[] args)
         {
             Console.WriteLine("Our commands:");
-            Console.WriteLine("/register");
-            Console.WriteLine("/login");
-            Console.WriteLine();
 
             UserRepository.Add("Zeynal", "Mikayilli", "admin@gmail.com", "123321");
 
             while (true)
             {
+                Console.WriteLine("/register");
+                Console.WriteLine("/login");
+                Console.WriteLine();
                 string command = Console.ReadLine();
                 Console.WriteLine();
 

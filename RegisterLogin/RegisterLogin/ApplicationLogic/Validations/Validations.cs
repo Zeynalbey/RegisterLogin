@@ -36,7 +36,7 @@ namespace RegisterLogin.ValidationLogic.Validations
     {
         public bool IsEmailCorrect(string email)
         {
-            string pattern = @"^([a-zA-Z0-9]{2,30})(@code\.edu\.az)$";
+            string pattern = @"^([a-zA-Z0-9]{2,30})(@code\.edu\.az)$";    //mail-in ad hisseni 2-den 30a qeder vermisem. example: zeynal@code.edu.az
             Regex regex = new Regex(pattern);
             if (regex.IsMatch(email))
             {

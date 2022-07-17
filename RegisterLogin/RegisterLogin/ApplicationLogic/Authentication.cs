@@ -3,6 +3,7 @@ using RegisterLogin.Database.Repository;
 using RegisterLogin.ValidationLogic.Validations;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -61,13 +62,31 @@ namespace RegisterLogin.ValidationLogic
 
             if (UserRepository.IsUserExistsByEmail(email, password))
             {
-                Console.WriteLine("Wellcome to our application! ");
+                Console.WriteLine("Well come to our application! ");
+            }
+            else if (email == "Admin@gmail.com" && password == "123321")
+            {
+                Console.WriteLine("Welcome to your account, dear admin, Zeynal Mikayilli admin@gmail.com!");
+                Console.WriteLine("/show-users");
+                string command = Console.ReadLine();
+
+                if (command == "/show-users")
+                {
+                    UserRepository.ShowAllUsers();
+                }
+                else
+                {
+                    Console.WriteLine("not found");
+                }
             }
             else
             {
                 Console.WriteLine("Email or password is not correct! ");
             }
 
+            Console.WriteLine();
+
+            
 
 
 
