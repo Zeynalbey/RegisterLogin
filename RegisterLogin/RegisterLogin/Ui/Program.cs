@@ -13,46 +13,72 @@ namespace RegisterLogin
             Console.WriteLine("/register");
             Console.WriteLine("/login");
 
-            string command = Console.ReadLine();
-
-            if (command == "/register")
+            while (true)
             {
-                Console.Write("Write name:");
-                string name = Console.ReadLine();
-                Console.Write("Write surname:");
-                string lastName = Console.ReadLine();
-                Console.Write("Write email:");
-                string email = Console.ReadLine();
-                Console.Write("Write password:");
-                string password = Console.ReadLine();
-                ValidationName validationName = new ValidationName();
-                ValidationLastName validationLastName = new ValidationLastName();
-                ValidationEmailL validationEmail = new ValidationEmailL();
-                ValidationPassword validationPassword = new ValidationPassword();
+                string command = Console.ReadLine();
 
-                if (validationName.IsCorrect(name) &
-                    validationLastName.IsCorrect(lastName) &
-                    validationEmail.IsEmailCorrect(email) &
-                    validationPassword.IsPasswordCorrect(password))
+                if (command == "/register")
                 {
-                    UserRepository.Add(name, lastName, email, password);
+                    Console.Write("Write name: ");
+                    string name = Console.ReadLine();
+                    Console.Write("Write surname: ");
+                    string lastName = Console.ReadLine();
+                    Console.Write("Write email: ");
+                    string email = Console.ReadLine();
+                    Console.Write("Write password: ");
+                    string password = Console.ReadLine();
+                    ValidationName validationName = new ValidationName();
+                    ValidationLastName validationLastName = new ValidationLastName();
+                    ValidationEmailL validationEmail = new ValidationEmailL();
+                    ValidationPassword validationPassword = new ValidationPassword();
 
-                    Console.WriteLine($"{name}, you successfully registered, now you can login with your new account!");
+                    if (validationName.IsCorrect(name) &
+                        validationLastName.IsCorrect(lastName) &
+                        validationEmail.IsEmailCorrect(email) &
+                        validationPassword.IsPasswordCorrect(password))
+                    {
+                        UserRepository.Add(name, lastName, email, password);
+
+                        Console.WriteLine($"{name}, you successfully registered, now you can login with your new account!");
+                    }
+                    else
+                    {
+                        Console.WriteLine("You couldn't register!");
+                    }
+
+                }
+                else if (command == "/login")
+                {
+                    Console.Write("Please input your email: ");
+                    string email = Console.ReadLine();
+                    Console.Write("Please input your password: ");
+                    string password = Console.ReadLine();
+                    Console.Write("Please comfirm password: ");
+                    string comfirmPassword = Console.ReadLine();
+
+                    if (UserRepository.IsEqualComfirmPassword(password, comfirmPassword))
+                    {
+                        if (UserRepository.IsUserExistsByEmail(email, comfirmPassword))
+                        {
+                            Console.WriteLine("Wellcome to our application! ");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Email or password is not correct! ");
+                        }
+                    }
+                   
+
+                    
+
+
                 }
                 else
                 {
-                    Console.WriteLine("You couldn't register!");
+                    Console.WriteLine("Command not found! ");
                 }
-
             }
-            else if (command == "/login")
-            {
-
-            }
-            else
-            {
-                Console.WriteLine("Duzgun komanda daxil edin.");
-            }
+            
 
         }
     }

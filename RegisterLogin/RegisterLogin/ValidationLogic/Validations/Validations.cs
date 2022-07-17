@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using RegisterLogin.Database;
+using RegisterLogin.Database.Repository;
 
 namespace RegisterLogin.ValidationLogic.Validations
 {
@@ -20,7 +22,7 @@ namespace RegisterLogin.ValidationLogic.Validations
             }
             return false;
         }
-        
+
     }
     public class ValidationName : LengthValidaton
     {
@@ -28,11 +30,11 @@ namespace RegisterLogin.ValidationLogic.Validations
     }
     public class ValidationLastName : LengthValidaton
     {
-        
+
     }
     public class ValidationEmailL
     {
-        public  bool IsEmailCorrect(string email)
+        public bool IsEmailCorrect(string email)
         {
             string pattern = @"^([a-zA-Z0-9]{2,30})(@code\.edu\.az)$";
             Regex regex = new Regex(pattern);
@@ -74,8 +76,12 @@ namespace RegisterLogin.ValidationLogic.Validations
 
             return true;
         }
+
+        
     }
+
     
+
 
 
 }
