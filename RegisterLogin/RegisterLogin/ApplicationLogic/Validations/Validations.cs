@@ -26,7 +26,7 @@ namespace RegisterLogin.ValidationLogic.Validations
     }
     public class ValidationName : LengthValidaton
     {
-
+        
     }
     public class ValidationLastName : LengthValidaton
     {
