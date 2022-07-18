@@ -49,12 +49,10 @@ namespace RegisterLogin.Database.Repository
 
             return false;
         }
-        public static void ShowAllUsers()
+        public static List<User> ShowAllUsers()
         {
-            foreach (User user in users)
-            {
-                Console.WriteLine(user.GetInfo());
-            }
+            
+            return users;
         }
 
         

@@ -69,10 +69,13 @@ namespace RegisterLogin.ValidationLogic
                 Console.WriteLine("Welcome to your account, dear admin, Zeynal Mikayilli admin@gmail.com!");
                 Console.WriteLine("/show-users");
                 string command = Console.ReadLine();
-
+                
                 if (command == "/show-users")
                 {
-                    UserRepository.ShowAllUsers();
+                    foreach (User user in UserRepository.ShowAllUsers())
+                    {
+                        Console.WriteLine(user.GetInfo());
+                    }
                 }
                 else
                 {
